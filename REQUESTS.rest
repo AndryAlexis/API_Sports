@@ -1,2 +1,23 @@
+@host = http://localhost:3020
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFuZHJ5IiwiaWF0IjoxNzI5ODAyNjUyfQ.1vakJ70RgblB2eLebyIWQ7NR8yVajmr1QQx_sx2WuXw
 
-GET http://localhost:3020/api/potato
+POST {{host}}/api/users/register
+Content-Type: application/json
+
+{
+    "username" : "Andry",
+    "password" : "1123"
+}
+
+###
+POST {{host}}/api/users/login
+Content-Type: application/json
+
+{
+    "username" : "Andry",
+    "password" : "123"
+}
+
+###
+GET {{host}}/api/users/profile
+Authorization: {{token}}

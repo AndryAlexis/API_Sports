@@ -1,9 +1,9 @@
 import http from 'node:http'          // Import the built-in HTTP module from Node.js
 import expressApp from './src/app.js' // Import the Express app from the specified path
 import dotenv from 'dotenv'           // Import dotenv to manage environment variables
+import DEFAULT_VALUE from './src/utils/defaultValues.js'
 
 (() => {
-    const DEFAULT_PORT = 3000
     const SERVER_EVENT = {
         LISTENING: 'listening',
         ERROR: 'error'
@@ -16,7 +16,7 @@ import dotenv from 'dotenv'           // Import dotenv to manage environment var
     const server = http.createServer(expressApp()) // Create a server that uses the Express app
 
     // Set the API port, defaulting to 3000 if not specified in environment variables
-    const API_PORT = process.env.API_PORT || DEFAULT_PORT
+    const API_PORT = process.env.API_PORT || DEFAULT_VALUE.API_PORT
 
     // Start the server and listen on the specified port
     server.listen(API_PORT)
