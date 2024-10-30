@@ -1,23 +1,22 @@
-# 🏆 API SPORTS 🏆
+# 🏆 **API SPORTS** 🏆
 
 ## 🔐 Authentication
 ---------------------------------------
 
 ### 📝 Register
 
-• URL: /api/users/register
+• URL: */api/users/register*
 
-• METHOD: POST 
+• METHOD: *POST*
 
-• HEADERS: Content-Type: application/json
+• HEADERS: *Content-Type: application/json*
 
 • BODY: 
-  - username
-  - password
+  - *username*
+  - *password*
 
 @ 📥 INPUT:    
-
-```
+```json
 {
     "username" : "Andry",
     "password" : "123"
@@ -31,19 +30,19 @@
 
 ### 🔑 Login  
 
-• URL: /api/users/login
+• URL: */api/users/login*
 
-• METHOD: POST 
+• METHOD: *POST*
 
-• HEADERS: Content-Type: application/json
+• HEADERS: *Content-Type: application/json*
 
 • BODY: 
-  - username
-  - password
+  - *username*
+  - *password*
 
 @ 📥 INPUT:
 
-```
+```json
 {
     "username" : "Andry",
     "password" : "123"
@@ -57,15 +56,15 @@
 
 ### 👤 Profile
 
-• URL: /api/users/profile
+• URL: */api/users/profile*
 
-• METHOD: GET 
+• METHOD: *GET*
 
-• HEADERS: Authorization: Bearer <token>
+• HEADERS: *Authorization: Bearer <token>*
 
-• BODY: None
+• BODY: **None**
 
-@ 📥 INPUT: None
+@ 📥 INPUT: **None**
 
 @ 📤 OUTPUT:
     👥 A Json with the user profile data
@@ -73,67 +72,62 @@
 ---------------------------------------
 
 ## 🎯 Events Management
----------------------------------------
 
 ### 📋 Get All Events
 
-• URL: /api/events
+• URL: */api/events*
 
-• METHOD: GET
+• METHOD: *GET*
 
-• HEADERS: Authorization: Bearer <token>
+• HEADERS: *Authorization: Bearer <token>*
 
-• BODY: None
+• BODY: **None**
 
-@ 📥 INPUT: None
+@ 📥 INPUT: **None**
 
 @ 📤 OUTPUT:
     📑 A Json with all events
 
----------------------------------------
-
 ### 🔍 Get Event Details
 
-• URL: /api/events/:id
+• URL: */api/events/:id*
 
-• METHOD: GET
+• METHOD: *GET*
 
-• HEADERS: Authorization: Bearer <token>
-• BODY: None
+• HEADERS: *Authorization: Bearer <token>*
+• BODY: **None**
 
 @ 📥 INPUT: id from URL
 
 @ 📤 OUTPUT:
     📄 A Json with the event details
 
----------------------------------------
-
 ### ➕ Create Event
 
-• URL: /api/events
+• URL: */api/events*
 
-• METHOD: POST
+• METHOD: *POST*
 
 • HEADERS: 
-    - Authorization: Bearer <token>
-    - Content-Type: multipart/form-data
+    - *Authorization: Bearer <token>*
+    - *Content-Type: multipart/form-data*
 
 • BODY:
-    - name
-    - description
-    - date
-    - location
-    - sportType
-    - image(optional)
+    - *name*
+    - *description*
+    - *date*
+    - *location*
+    - *sportType*
+    - *image(optional)*
 
 @ 📥 INPUT:
     - Form data with:
-        📝 name: string
-        📝 description: string
-        📅 date: YYYY-MM-DD
-        📍 location: string
-        🎮 sportType: string
-        🖼️ image: file (optional)
+        📝 *name*: string
+        📝 *description*: string
+        📅 *date*: YYYY-MM-DD
+        📍 *location*: string
+        🎮 *sportType*: string
+        🖼️ *image*: file (optional)
 
 @ 📤 OUTPUT:
     ✅ A Json with the created event
@@ -142,27 +136,27 @@
 
 ### ✏️ Update Event
 
-• URL: /api/events/:id
+• URL: */api/events/:id*
 
-• METHOD: PUT
+• METHOD: *PUT*
 
 • HEADERS: 
-    - Authorization: Bearer <token>
-    - Content-Type: application/json
+    - *Authorization: Bearer <token>*
+    - *Content-Type: application/json*
 
 • BODY:
-    - name
-    - description
-    - date
-    - location
-    - sportType
-    - organizer
+    - *name*
+    - *description*
+    - *date*
+    - *location*
+    - *sportType*
+    - *organizer*
 
 @ 📥 INPUT:
     - id from URL
     - Json with the event data to update
 
-```
+```json
 {
     "name": "Test 6",
     "description": "Torneo regional sub-18 de baloncesto.",
@@ -180,13 +174,13 @@
 
 ### ❌ Delete Event
     
-• URL: /api/events/:id
+• URL: */api/events/:id*
 
-• METHOD: DELETE
+• METHOD: *DELETE*
 
-• HEADERS: Authorization: Bearer <token>
+• HEADERS: *Authorization: Bearer <token>*
 
-• BODY: None
+• BODY: **None**
 
 @ 📥 INPUT: id from URL
 
@@ -202,12 +196,12 @@
 
 • URL: /api/events/upcoming
 
-• METHOD: GET
+• METHOD: *GET*
 
-• HEADERS: Authorization: Bearer <token>
-• BODY: None
+• HEADERS: *Authorization: Bearer <token>*
+• BODY: **None**
 
-@ 📥 INPUT: None
+@ 📥 INPUT: **None**
 
 @ 📤 OUTPUT:
     📆 A Json with upcoming events
@@ -215,12 +209,12 @@
 ---------------------------------------
 
 ### 🎯 Filter by Sport Type
-• URL: /api/events?type=<sportType>
-• METHOD: GET
-• HEADERS: Authorization: Bearer <token>
-• BODY: None
+• URL: */api/events?type=<sportType>*
+• METHOD: *GET*
+• HEADERS: *Authorization: Bearer <token>*
+• BODY: **None**
 
-@ 📥 INPUT: sportType from URL
+@ 📥 INPUT: *sportType* from URL
 
 @ 📤 OUTPUT:
     🎮 A Json with events filtered by sport type
@@ -229,17 +223,17 @@
 
 ### 📅 Filter by Date Range
 
-• URL: /api/events/date
+• URL: */api/events/date*
 
-• METHOD: GET
+• METHOD: *GET*
 
-• HEADERS: Authorization: Bearer <token>
+• HEADERS: *Authorization: Bearer <token>*
 
 • QUERY PARAMS:
-    - from
-    - to
+    - *from*
+    - *to*
 
-@ 📥 INPUT: from, to from URL
+@ 📥 INPUT: *from*, *to* from URL
 
 @ 📤 OUTPUT:
     📆 A Json with events between the specified dates
@@ -248,16 +242,17 @@
 
 ### 📑 Pagination
 
-• URL: /api/events/page
+• URL: */api/events/page*
 
-• METHOD: GET
+• METHOD: *GET*
 
-• HEADERS: Authorization: Bearer <token>
+• HEADERS: *Authorization: Bearer <token>*
+
 • QUERY PARAMS:
-    - page
+    - *page*
     - limit
 
-@ 📥 INPUT: page, limit from URL
+@ 📥 INPUT: *page*, *limit* from URL
 
 @ 📤 OUTPUT:
     📚 A Json with paginated events
