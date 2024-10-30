@@ -7,7 +7,7 @@
 > • **URL:** */api/users/register*<br>
 > • **METHOD:** *POST*<br>
 > • **HEADERS:** *Content-Type: application/json*<br>
-> • **BODY:** <br>
+> • **BODY:**
 >>  - *username*<br>
 >>  - *password*<br>
 
