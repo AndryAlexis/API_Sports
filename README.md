@@ -4,12 +4,12 @@
 
 ### 📝 Register
 
-> • **URL:** */api/users/register*
-> • **METHOD:** *POST*
-> • **HEADERS:** *Content-Type: application/json*
-> • **BODY:** 
->>  - *username*
->>  - *password*
+> • **URL:** */api/users/register*<br>
+> • **METHOD:** *POST*<br>
+> • **HEADERS:** *Content-Type: application/json*<br>
+> • **BODY:** <br>
+>>  - *username*<br>
+>>  - *password*<br>
 
 **📥 INPUT:**    
 ```json
