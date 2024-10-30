@@ -15,14 +15,17 @@
   - username
   - password
 
-@ 📥 INPUT:
-    - A Json like:
-    ```json
-    {
-        "username" : "Andry",
-        "password" : "123"
-    }
-    ```
+@ 📥 INPUT:    
+
+```
+{
+
+    "username" : "Andry",
+
+    "password" : "123"
+
+}
+```
 
 @ 📤 OUTPUT:
     ✅ A Json with the user created
