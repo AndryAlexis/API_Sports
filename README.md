@@ -5,14 +5,11 @@
 ### 📝 Register
 
 > • **URL:** */api/users/register*
-
 > • **METHOD:** *POST*
-
 > • **HEADERS:** *Content-Type: application/json*
-
 > • **BODY:** 
-  - *username*
-  - *password*
+>>  - *username*
+>>  - *password*
 
 **📥 INPUT:**    
 ```json
