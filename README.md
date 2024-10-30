@@ -4,7 +4,7 @@
 
 ### 📝 Register
 
-• **URL:** */api/users/register*
+> • **URL:** */api/users/register*
 
 • **METHOD:** *POST*
 
@@ -61,7 +61,7 @@
 
 • **HEADERS:** *Authorization: Bearer <token>*
 
-• **BODY:** **-None**
+• **BODY:** **None**
 
 **📥 INPUT:** **None**
 
@@ -87,6 +87,8 @@
 **📤 OUTPUT:**
     📑 A Json with all events
 
+---------------------------------------º
+
 ### 🔍 Get Event Details
 
 • **URL:** */api/events/:id*
@@ -100,6 +102,8 @@
 
 **📤 OUTPUT:**
     📄 A Json with the event details
+
+---------------------------------------
 
 ### ➕ Create Event
 
