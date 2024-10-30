@@ -4,9 +4,13 @@
 ---------------------------------------
 
 ### 📝 Register
+
 • URL: /api/users/register
+
 • METHOD: POST 
+
 • HEADERS: Content-Type: application/json
+
 • BODY: 
   - username
   - password
@@ -24,9 +28,13 @@
 ---------------------------------------
 
 ### 🔑 Login  
+
 • URL: /api/users/login
+
 • METHOD: POST 
+
 • HEADERS: Content-Type: application/json
+
 • BODY: 
   - username
   - password
@@ -44,9 +52,13 @@
 ---------------------------------------
 
 ### 👤 Profile
+
 • URL: /api/users/profile
+
 • METHOD: GET 
+
 • HEADERS: Authorization: Bearer <token>
+
 • BODY: None
 
 @ 📥 INPUT: None
@@ -60,9 +72,13 @@
 ---------------------------------------
 
 ### 📋 Get All Events
+
 • URL: /api/events
+
 • METHOD: GET
+
 • HEADERS: Authorization: Bearer <token>
+
 • BODY: None
 
 @ 📥 INPUT: None
@@ -73,8 +89,11 @@
 ---------------------------------------
 
 ### 🔍 Get Event Details
+
 • URL: /api/events/:id
+
 • METHOD: GET
+
 • HEADERS: Authorization: Bearer <token>
 • BODY: None
 
@@ -86,11 +105,15 @@
 ---------------------------------------
 
 ### ➕ Create Event
+
 • URL: /api/events
+
 • METHOD: POST
+
 • HEADERS: 
     - Authorization: Bearer <token>
     - Content-Type: multipart/form-data
+
 • BODY:
     - name
     - description
@@ -114,11 +137,15 @@
 ---------------------------------------
 
 ### ✏️ Update Event
+
 • URL: /api/events/:id
+
 • METHOD: PUT
+
 • HEADERS: 
     - Authorization: Bearer <token>
     - Content-Type: application/json
+
 • BODY:
     - name
     - description
@@ -145,9 +172,13 @@
 ---------------------------------------
 
 ### ❌ Delete Event
+    
 • URL: /api/events/:id
+
 • METHOD: DELETE
+
 • HEADERS: Authorization: Bearer <token>
+
 • BODY: None
 
 @ 📥 INPUT: id from URL
@@ -161,8 +192,11 @@
 ---------------------------------------
 
 ### ⏰ Upcoming Events
+
 • URL: /api/events/upcoming
+
 • METHOD: GET
+
 • HEADERS: Authorization: Bearer <token>
 • BODY: None
 
@@ -187,9 +221,13 @@
 ---------------------------------------
 
 ### 📅 Filter by Date Range
+
 • URL: /api/events/date
+
 • METHOD: GET
+
 • HEADERS: Authorization: Bearer <token>
+
 • QUERY PARAMS:
     - from
     - to
@@ -202,8 +240,11 @@
 ---------------------------------------
 
 ### 📑 Pagination
+
 • URL: /api/events/page
+
 • METHOD: GET
+
 • HEADERS: Authorization: Bearer <token>
 • QUERY PARAMS:
     - page
