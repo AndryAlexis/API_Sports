@@ -19,11 +19,8 @@
 
 ```
 {
-
     "username" : "Andry",
-
     "password" : "123"
-
 }
 ```
 
@@ -45,11 +42,13 @@
   - password
 
 @ 📥 INPUT:
-    - A Json like:
-        {
-            "username" : "Andry",
-            "password" : "123"
-        }
+
+```
+{
+    "username" : "Andry",
+    "password" : "123"
+}
+```
 
 @ 📤 OUTPUT:
     🎫 A Json with the authentication token
@@ -161,15 +160,18 @@
 
 @ 📥 INPUT:
     - id from URL
-    - A Json like:
-        {
-            "name": "Test 6",
-            "description": "Torneo regional sub-18 de baloncesto.",
-            "date": "2023-10-04",
-            "location": "Barcelona", 
-            "sportType": "Basketball",
-            "organizer": "Alexis"
-        }
+    - Json with the event data to update
+
+```
+{
+    "name": "Test 6",
+    "description": "Torneo regional sub-18 de baloncesto.",
+    "date": "2023-10-04",
+    "location": "Barcelona", 
+    "sportType": "Basketball",
+    "organizer": "Alexis"
+}
+```
 
 @ 📤 OUTPUT:
     ✅ A Json with the updated event
