@@ -146,7 +146,7 @@
 
 > • **URL:** */api/events*<br>
 > • **METHOD:** *POST*<br>
-> • **HEADERS:** 
+> • **HEADERS:** <br>
 >     - *Authorization: Bearer <token>*<br>
 >     - *Content-Type: multipart/form-data*<br>
 > • **BODY:** *name*, *description*, *date*, *location*, *sportType*, *image(optional)*
