@@ -6,11 +6,11 @@
 
 > • **URL:** */api/users/register*
 
-• **METHOD:** *POST*
+> • **METHOD:** *POST*
 
-• **HEADERS:** *Content-Type: application/json*
+> • **HEADERS:** *Content-Type: application/json*
 
-• **BODY:** 
+> • **BODY:** 
   - *username*
   - *password*
 
