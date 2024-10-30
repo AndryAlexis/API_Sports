@@ -8,8 +8,8 @@
 > • **METHOD:** *POST*<br>
 > • **HEADERS:** *Content-Type: application/json*<br>
 > • **BODY:**
->\t  - *username*<br>
->\t  - *password*<br>
+> \t  - *username*<br>
+> \t  - *password*<br>
 
 **📥 INPUT:**    
 ```json
