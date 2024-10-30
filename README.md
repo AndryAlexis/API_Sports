@@ -7,9 +7,7 @@
 > • **URL:** */api/users/register*<br>
 > • **METHOD:** *POST*<br>
 > • **HEADERS:** *Content-Type: application/json*<br>
-> • **BODY:**
-> >  + *username*<br>
-> >  + *password*<br>
+> • **BODY:** *username* and *password*<br>
 
 **📥 INPUT:**    
 ```json
@@ -20,7 +18,14 @@
 ```
 
 **📤 OUTPUT:**
-    ✅ A Json with the user created
+```json
+{
+    "id": 25,
+    "username": "Andry",
+    "password": "123",
+    "role": "regular"
+}
+```	
 
 ---------------------------------------
 
