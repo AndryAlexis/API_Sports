@@ -1,32 +1,44 @@
-// Import necessary modules
-import express from 'express'                        // Express for server and routing
-import cors from 'cors'                              // CORS middleware to enable Cross-Origin requests
-import { writeLog } from './middleware/middleware.js'     // Custom logging middleware
-import apiRoutes from './routes/api.routes.js' // Importing potato-related routes
+// Import required dependencies
+import express from 'express'                         // Web application framework
+import cors from 'cors'                               // Cross-Origin Resource Sharing middleware
+import { writeLog } from './middleware/requestLogger.middleware.js' // Custom logging middleware for request tracking
+import apiRoutes from './routes/api.routes.js'       // API route definitions for users and events
 
-// Exporting the function that creates and configures the Express app
+/**
+ * Creates and configures an Express application instance
+ * @returns {express.Application} Configured Express app
+ */
 export default _ => {
-    const URL = '/api';  // Base URL path for potato routes
-    const app = express()  // Create a new Express app instance
-
-    app.use(express.json())  // Middleware to parse incoming JSON requests
-    app.use(cors())          // Enable CORS for handling cross-origin requests
+    // Define base API URL path
+    const URL = '/api'
     
-    // Route configuration
+    // Initialize Express application
+    const app = express()
+
+    // Configure global middleware
+    app.use(express.json())  // Parse JSON request bodies
+    app.use(cors())          // Allow cross-origin requests
+
+    // Mount API routes with logging middleware
+    // All routes under /api will be logged and handled by apiRoutes
     app.use(URL, writeLog, apiRoutes())
-    // Assigns routes under the /potato URL, and applies logging middleware before route handling
 
-    // Error handler middleware
+    /**
+     * Global error handling middleware
+     * Catches all errors thrown in the application and sends standardized response
+     */
     app.use((err, req, res, next) => {
-        console.error('CUSTOM ERRORS: ', err.stack);  // Log the error stack trace to the console
+        // Log full error stack for debugging
+        console.error('CUSTOM ERROR: ', err.stack)
 
+        // Send error response to client
         res
             .status(err.statusCode)
             .json({
-                error : err.name,
-                message : err.message,
+                error: err.name,
+                message: err.message,
             })
     })
 
-    return app  // Return the configured app
+    return app
 }

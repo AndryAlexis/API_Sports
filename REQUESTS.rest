@@ -1,16 +1,7 @@
-@host = http://localhost:3020
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFuZHJ5IiwiaWF0IjoxNzI5ODAyNjUyfQ.1vakJ70RgblB2eLebyIWQ7NR8yVajmr1QQx_sx2WuXw
+@host = http://localhost:3050
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFuZHJ5Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzMwMzA2MTUyfQ.XdyAgujdZaoGqPkRjZyWjMG3brVCeiGu2WCT1enP1WA
 
 POST {{host}}/api/users/register
-Content-Type: application/json
-
-{
-    "username" : "Andry",
-    "password" : "1123"
-}
-
-###
-POST {{host}}/api/users/login
 Content-Type: application/json
 
 {
@@ -19,5 +10,88 @@ Content-Type: application/json
 }
 
 ###
+POST {{host}}/api/users/login
+Content-Type: application/json
+
+{
+    "username" : "Andry",
+    "password" : 123
+}
+
+###
 GET {{host}}/api/users/profile
+Authorization: {{token}}
+
+###
+GET {{host}}/api/events
+Authorization: {{token}}
+
+###
+GET {{host}}/api/events/5
+Authorization: {{token}}
+
+###
+POST {{host}}/api/events
+Authorization: {{token}}
+Content-Type: multipart/form-data; boundary=----FormData    
+
+------FormData
+Content-Disposition: form-data; name="name"
+
+THIS IS THE NAME
+------FormData
+Content-Disposition: form-data; name="description"
+
+THIS IS THE DESCRIPTION
+------FormData
+Content-Disposition: form-data; name="date"
+
+2025-10-04
+------FormData
+Content-Disposition: form-data; name="location"
+
+Barcelona
+------FormData
+Content-Disposition: form-data; name="sportType"
+
+Basketball
+------FormData
+Content-Disposition: form-data; name="image"; filename="testImg.jpg"
+Content-Type: image/jpeg
+
+< ./src/test/img.jpg
+------FormData--
+
+###
+PUT {{host}}/api/events/5
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+    "name": "Test 6",
+    "description": "Torneo regional sub-18 de baloncesto.",
+    "date": "2023-10-04",
+    "location": "Barcelona",
+    "sportType": "Basketball",
+    "organizer": "Alexis"
+}
+
+###
+DELETE {{host}}/api/events/43
+Authorization: {{token}}
+
+###
+GET {{host}}/api/events/upcoming
+Authorization: {{token}}
+
+###
+GET {{host}}/api/events?type=Basketball
+Authorization: {{token}}
+
+###
+GET {{host}}/api/events/date?from=2023-01-01&to=2024-01-31
+Authorization: {{token}}
+
+###
+GET {{host}}/api/events/page?page=15&limit=2
 Authorization: {{token}}

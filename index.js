@@ -1,33 +1,39 @@
-import http from 'node:http'          // Import the built-in HTTP module from Node.js
-import expressApp from './src/app.js' // Import the Express app from the specified path
-import dotenv from 'dotenv'           // Import dotenv to manage environment variables
-import DEFAULT_VALUE from './src/utils/defaultValues.js'
+// Import required modules
+import http from 'node:http'          // Node.js built-in HTTP server module
+import expressApp from './src/app.js' // Express application instance
+import dotenv from 'dotenv'           // Environment variables management
+import DEFAULT_VALUE from './src/utils/defaultValues.js' // Default configuration values
 
+// Immediately Invoked Function Expression (IIFE) to encapsulate server setup
 (() => {
+    // Define server event type constants for better maintainability
     const SERVER_EVENT = {
-        LISTENING: 'listening',
-        ERROR: 'error'
+        LISTENING: 'listening', // Event fired when server starts listening
+        ERROR: 'error'         // Event fired when server encounters an error
     }
 
-    // Load environment variables from .env file
+    // Initialize environment variables from .env file
     dotenv.config()
 
-    // Server creation using the HTTP module
-    const server = http.createServer(expressApp()) // Create a server that uses the Express app
+    // Create HTTP server instance using Express application
+    const server = http.createServer(expressApp())
 
-    // Set the API port, defaulting to 3000 if not specified in environment variables
+    // Get port number from environment variables or use default
+    // This allows for flexible deployment configurations
     const API_PORT = process.env.API_PORT || DEFAULT_VALUE.API_PORT
 
-    // Start the server and listen on the specified port
+    // Start the server on the configured port
     server.listen(API_PORT)
 
-    // Event listener for when the server starts listening
+    // Configure server event handlers
     server.on(SERVER_EVENT.LISTENING, () => {
-        console.log(`Server listening on port ${API_PORT}`) // Log the port number
+        // Log successful server start
+        console.log(`Server listening on port ${API_PORT}`)
     })
 
-    // Event listener for handling server errors
     server.on(SERVER_EVENT.ERROR, (error) => {
-        console.log(error) // Log the error message to the console
+        // Log any server errors for debugging
+        // In production, this should be replaced with proper error logging
+        console.log(error)
     })
 })()
