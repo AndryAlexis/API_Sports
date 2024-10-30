@@ -48,8 +48,8 @@ import {
  */
 const getAllOrByType = (req, res, next) => {
     return req.query
-        ? getByType(req, res, next)
-        : getAll(req, res, next);
+        ? getAll(req, res, next)
+        : getByType(req, res, next);
 }
 
 /**
