@@ -153,12 +153,12 @@
 > **BODY:** *name*, *description*, *date*, *location*, *sportType*, *image(optional)*
 
 **📥 INPUT:**
-    - Form data with:
-        📝 *name*: string
-        📝 *description*: string
-        📅 *date*: YYYY-MM-DD
-        📍 *location*: string
-        🎮 *sportType*: string
+    - Form data with:<br>
+        📝 *name*: string<br>
+        📝 *description*: string<br>
+        📅 *date*: YYYY-MM-DD<br>
+        📍 *location*: string<br>
+        🎮 *sportType*: string<br>
         🖼️ *image*: file (optional)
 
 **📤 OUTPUT:**
