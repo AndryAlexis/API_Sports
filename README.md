@@ -146,9 +146,7 @@
 
 > • **URL:** */api/events*<br>
 > • **METHOD:** *POST*<br>
-> • **HEADERS:** <br>
->>    - *Authorization: Bearer <token>*<br>
->>    - *Content-Type: multipart/form-data*<br>
+> • **HEADERS:** *Authorization: Bearer <token>*, *Content-Type: multipart/form-data*<br>
 > • **BODY:** *name*, *description*, *date*, *location*, *sportType*, *image(optional)*
 
 **📥 INPUT:**
@@ -180,9 +178,7 @@
 
 > • **URL:** */api/events/:id*<br>
 > • **METHOD:** *PUT*<br>
-> • **HEADERS:** 
->     - *Authorization: Bearer <token>*
->     - *Content-Type: application/json*
+> • **HEADERS:** *Authorization: Bearer <token>*, *Content-Type: application/json*<br>
 
 > **BODY:** *name*, *description*, *date*, *location*, *sportType*, *organizer*
 
